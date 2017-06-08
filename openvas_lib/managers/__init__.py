@@ -1,0 +1,1 @@
+from openvas_lib.managers.vulnscan_manager7 import VulnscanManager7
