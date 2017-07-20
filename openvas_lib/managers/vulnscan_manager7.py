@@ -257,6 +257,66 @@ def results_parser(results, ignore_log_info=True):
 
     return m_return
 
+# ------------------------------------------------------------------------------
+#
+# High level exceptions
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+class VulnscanException(Exception):
+    """Base class for OpenVAS exceptions."""
+
+
+# ------------------------------------------------------------------------------
+class VulnscanAuthFail(VulnscanException):
+    """Authentication failure."""
+
+
+# ------------------------------------------------------------------------------
+class VulnscanServerError(VulnscanException):
+    """Error message from the OpenVAS server."""
+
+
+# ------------------------------------------------------------------------------
+class VulnscanClientError(VulnscanException):
+    """Error message from the OpenVAS client."""
+
+
+# ------------------------------------------------------------------------------
+class VulnscanProfileError(VulnscanException):
+    """Profile error."""
+
+
+# ------------------------------------------------------------------------------
+class VulnscanTargetError(VulnscanException):
+    """Target related errors."""
+
+
+# ------------------------------------------------------------------------------
+class VulnscanScanError(VulnscanException):
+    """Task related errors."""
+
+
+# ------------------------------------------------------------------------------
+class VulnscanVersionError(VulnscanException):
+    """Wrong version of OpenVAS server."""
+
+
+# ------------------------------------------------------------------------------
+class VulnscanTaskNotFinishedError(VulnscanException):
+    """Wrong version of OpenVAS server."""
+
+
+# ------------------------------------------------------------------------------
+class VulnscanAuditNotRunningError(VulnscanException):
+    """Wrong version of OpenVAS server."""
+
+
+# ------------------------------------------------------------------------------
+class VulnscanAuditNotFoundError(VulnscanException):
+    """Wrong version of OpenVAS server."""
+
 
 class VulnscanManager7(object):
     """
