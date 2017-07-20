@@ -318,6 +318,15 @@ class VulnscanAuditNotFoundError(VulnscanException):
     """Wrong version of OpenVAS server."""
 
 
+# ------------------------------------------------------------------------------
+#
+# High level interface
+#
+# ------------------------------------------------------------------------------
+class AuditNotRunning(object):
+    pass
+
+
 class VulnscanManager7(object):
     """
     High level interface to the OpenVAS server.
