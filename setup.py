@@ -38,7 +38,7 @@ metadata = {
 
     # Setup instructions.
     'provides': ['openvas_lib'],
-    'packages': ['openvas_lib'],
+    'packages': ['openvas_lib', 'openvas_lib.managers'],
 
     # Metadata.
     'name': 'openvas_lib',
