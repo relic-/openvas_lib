@@ -668,10 +668,6 @@ class VulnscanManager7(object):
         if not isinstance(task_id, str):
             raise TypeError("Expected string, got %r instead" % type(task_id))
 
-        if self._manager.is_task_running(task_id):
-            raise VulnscanTaskNotFinishedError(
-                "Task is currently running. Until it not finished, you can't obtain the results.")
-
         try:
             m_response = self._manager.get_results(task_id)
         except ServerError as e:
