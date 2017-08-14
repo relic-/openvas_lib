@@ -898,5 +898,5 @@ class VulnscanManager7(object):
         try:
             self._manager.resume_task(task_id)
         except ClientError as e:
-            raise VulnscanClientError(e)
+            raise VulnscanServerError("Cannot resume the task %s. Error: %s" % (task_id, e.message))
     # ----------------------------------------------------------------------
