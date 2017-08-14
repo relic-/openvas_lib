@@ -885,3 +885,18 @@ class VulnscanManager7(object):
         :type parser: function
         """
         return parser(results)
+
+    def resume_audit(self, task_id):
+        """
+        Resume stopped task by specified scan ID in the OpenVAS server.
+
+        :param task_id: Scan ID.
+        :type task_id: str
+
+        :raises: VulnscanAuditNotFoundError
+        """
+        try:
+            self._manager.resume_task(task_id)
+        except ClientError as e:
+            raise VulnscanClientError(e)
+    # ----------------------------------------------------------------------

@@ -76,3 +76,17 @@ class OMPv7(OMPv4):
             m_query = '<get_results/>'
 
         return self._manager.make_xml_request(m_query, xml_result=True)
+
+    def resume_task(self, task_id):
+        """
+        Resume a stopped task.
+
+        :param task_id: task id
+        :type task_id: str
+
+        :raises: ServerError, AuditNotFoundError
+        """
+
+        request = """<resume_task task_id="%s" />""" % task_id
+
+        self._manager.make_xml_request(request, xml_result=True)
