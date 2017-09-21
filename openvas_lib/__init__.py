@@ -787,15 +787,14 @@ class VulnscanManager(object):
 
 		try:
 			# This returns all results from all tasks. Task filter doesn't work.
-			#m_response = self.__manager.get_results(task_id)
+			m_response = self.__manager.get_results(task_id)
 
-			m_response = self.__manager.get_report_xml(self.__task_report_id)
 		except ServerError as e:
 			raise VulnscanServerError("Can't get the results for the task %s. Error: %s" % (task_id, e.message))
 
 		m_response = etree.tostring(m_response)
 
-		return report_parser_from_text(m_response)
+		return report_parser_from_text(str(m_response))
 
 	# ----------------------------------------------------------------------
 	def get_raw_xml(self, task_id):
